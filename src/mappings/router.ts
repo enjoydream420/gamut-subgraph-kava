@@ -44,7 +44,7 @@ export function handleSwap(event: SwapEvent): void {
   let poolContract = PoolABI.bind(Address.fromString(poolAddress.toHexString()))
   let weights = poolContract.getWeights()
   pool.weight0 = weights[0].toBigDecimal();
-  pool.weight1 = weights[0].toBigDecimal();
+  pool.weight1 = weights[1].toBigDecimal();
   let token0 = Token.load(pool.token0)
   let token1 = Token.load(pool.token1)
   if (!token0 || !token1) return
